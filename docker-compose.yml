@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  # Next.js Web Application
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - api
+    volumes:
+      - ./apps/web:/app
+      - /app/node_modules
+      - /app/.next
+
+  # Python API Service
+  api:
+    build:
+      context: ./services
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      - DEBUG=true
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+    volumes:
+      - ./services:/app
+    command: uvicorn lensio.api.app:app --host 0.0.0.0 --port 8000 --reload
+
+  # Redis for job queue and caching
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
+  # Firebase Emulators (optional)
+  firebase:
+    image: andreysenov/firebase-tools
+    ports:
+      - "4000:4000" # Emulator UI
+      - "9099:9099" # Auth
+      - "8080:8080" # Firestore
+      - "9199:9199" # Storage
+      - "5001:5001" # Functions
+    working_dir: /app
+    volumes:
+      - ./firebase:/app
+    command: firebase emulators:start --only auth,firestore,storage,functions
+
+volumes:
+  redis_data:
