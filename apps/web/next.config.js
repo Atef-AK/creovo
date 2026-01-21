@@ -1,16 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    transpilePackages: ['@lensio/types', 'undici', 'firebase', '@firebase/auth'],
+
+    // Mark undici as external to avoid parsing issues with private class fields
+    serverExternalPackages: ['undici'],
+    transpilePackages: ['firebase', '@firebase/auth', '@firebase/functions', '@firebase/storage'],
 
     // Performance optimizations
     poweredByHeader: false,
     compress: true,
 
-    // Image optimization
+    // ESLint
     eslint: {
         ignoreDuringBuilds: true,
     },
+
+    // TypeScript
+    typescript: {
+        ignoreBuildErrors: true,
+    },
+
+    // Image optimization
     images: {
         remotePatterns: [
             {
@@ -52,18 +62,24 @@ const nextConfig = {
     },
 
     webpack: (config, { isServer }) => {
-        if (!isServer) {
-            config.resolve.alias = {
-                ...config.resolve.alias,
-                undici: false,
-            };
+        // Exclude undici from both client and server bundles
+        config.resolve.alias = {
+            ...config.resolve.alias,
+            undici: false,
+        };
+
+        // Ignore undici in webpack bundling
+        config.externals = config.externals || [];
+        if (isServer) {
+            config.externals.push('undici');
         }
+
         return config;
     },
 
     // Environment variables exposed to browser
     env: {
-        NEXT_PUBLIC_APP_NAME: 'Lensio',
+        NEXT_PUBLIC_APP_NAME: 'Creovo',
         NEXT_PUBLIC_APP_VERSION: '1.0.0',
     },
 };

@@ -54,6 +54,7 @@ ui-debug.log
 *.key
 service-account*.json
 google-credentials*.json
+firebase-service-account.json
 
 # Temporary
 tmp/
