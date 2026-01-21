@@ -51,7 +51,7 @@ export default function HomePage() {
 
                         {/* Social proof */}
                         <p className="mt-10 text-sm text-slate-500 dark:text-slate-400">
-                            Join 10,000+ creators generating content with Lensio
+                            Join 10,000+ creators generating content with Creovo
                         </p>
                     </div>
                 </div>
@@ -163,13 +163,13 @@ export default function HomePage() {
             <footer className="py-12 bg-slate-900 text-slate-400">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                        <div className="text-2xl font-bold text-white">Lensio</div>
+                        <div className="text-2xl font-bold text-white">Creovo</div>
                         <div className="flex gap-8 text-sm">
                             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
                             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
                             <Link href="/support" className="hover:text-white transition-colors">Support</Link>
                         </div>
-                        <p className="text-sm">© {new Date().getFullYear()} Lensio. All rights reserved.</p>
+                        <p className="text-sm">© {new Date().getFullYear()} Creovo. All rights reserved.</p>
                     </div>
                 </div>
             </footer>

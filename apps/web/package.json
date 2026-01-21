@@ -1,5 +1,5 @@
 {
-    "name": "@lensio/web",
+    "name": "@creovo/web",
     "version": "1.0.0",
     "private": true,
     "scripts": {
@@ -10,7 +10,7 @@
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
-        "@lensio/types": "*",
+        "@creovo/types": "*",
         "@tanstack/react-query": "^5.17.0",
         "clsx": "^2.1.0",
         "date-fns": "^3.2.0",

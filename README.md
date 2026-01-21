@@ -1,4 +1,4 @@
-# Lensio - AI Video Generation Platform
+# Creovo - AI Video Generation Platform
 
 Enterprise-grade multi-platform AI short-form video generation system.
 
@@ -45,7 +45,7 @@ docker-compose up
 npm run dev:web
 
 # Terminal 2 - Python API
-cd services && uvicorn lensio.api.app:app --reload
+cd services && uvicorn creovo.api.app:app --reload
 ```
 
 4. **Access the application**
@@ -57,7 +57,7 @@ cd services && uvicorn lensio.api.app:app --reload
 ## 📁 Project Structure
 
 ```
-lensio/
+creovo/
 ├── apps/
 │   └── web/                 # Next.js frontend
 │       ├── src/
@@ -69,7 +69,7 @@ lensio/
 │   └── types/               # Shared TypeScript types
 │       └── src/
 ├── services/                # Python backend
-│   └── lensio/
+│   └── creovo/
 │       ├── api/             # FastAPI application
 │       ├── ai/              # AI prompt engines
 │       ├── pipeline/        # Video generation pipeline
@@ -87,7 +87,7 @@ lensio/
 - **Database**: Firebase Firestore
 - **Auth**: Firebase Authentication
 - **Queue**: Redis + Cloud Tasks
-- **AI**: OpenAI GPT-4o, Anthropic Claude
+- **AI**: Google Gemini, Veo, Imagen
 - **Storage**: Google Cloud Storage + Google Drive
 
 ## 📋 API Endpoints

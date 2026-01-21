@@ -17,24 +17,24 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Lensio - AI Video Generation Platform',
-        template: '%s | Lensio',
+        default: 'Creovo - AI Video Generation Platform',
+        template: '%s | Creovo',
     },
     description: 'Generate viral short-form videos for TikTok, YouTube Shorts, and Instagram with AI.',
     keywords: ['AI', 'video generation', 'TikTok', 'YouTube Shorts', 'Instagram Reels', 'content creation'],
-    authors: [{ name: 'Lensio' }],
-    creator: 'Lensio',
+    authors: [{ name: 'Creovo' }],
+    creator: 'Creovo',
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        siteName: 'Lensio',
-        title: 'Lensio - AI Video Generation Platform',
+        siteName: 'Creovo',
+        title: 'Creovo - AI Video Generation Platform',
         description: 'Generate viral short-form videos for TikTok, YouTube Shorts, and Instagram with AI.',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Lensio - AI Video Generation Platform',
+        title: 'Creovo - AI Video Generation Platform',
         description: 'Generate viral short-form videos for TikTok, YouTube Shorts, and Instagram with AI.',
     },
     robots: {

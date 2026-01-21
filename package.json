@@ -1,5 +1,5 @@
 {
-  "name": "lensio",
+  "name": "creovo",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
@@ -13,8 +13,8 @@
     "test": "turbo run test",
     "lint": "turbo run lint",
     "clean": "turbo run clean",
-    "dev:web": "npm run dev --workspace=@lensio/web",
-    "dev:services": "npm run dev --workspace=lensio-api",
+    "dev:web": "npm run dev --workspace=@creovo/web",
+    "dev:services": "npm run dev --workspace=creovo-api",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
