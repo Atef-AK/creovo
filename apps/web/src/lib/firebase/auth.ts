@@ -20,7 +20,7 @@ import {
 } from 'firebase/auth';
 import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 import { getAuthInstance, getFirestoreInstance } from './config';
-import { User, UserRole, UserStatus } from '@lensio/types';
+import { User, UserRole, UserStatus } from '@/types';
 
 // Error codes for proper handling
 export enum AuthErrorCode {

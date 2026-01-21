@@ -16,7 +16,7 @@ import {
     RetryJobResponse,
     EstimateJobRequest,
     EstimateJobResponse,
-} from '@lensio/types';
+} from '@/types';
 
 export const jobsApi = {
     /**

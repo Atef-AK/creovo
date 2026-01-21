@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { nichesApi } from '@/lib/api';
-import { Niche } from '@lensio/types';
+import { Niche } from '@/types';
 
 const categoryColors: Record<string, string> = {
     lifestyle: 'bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400',

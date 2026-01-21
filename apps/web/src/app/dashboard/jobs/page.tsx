@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useJobsStore } from '@/stores';
-import type { Job } from '@lensio/types';
+import type { Job } from '@/types';
 
 const statusColors: Record<string, string> = {
     pending: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300',

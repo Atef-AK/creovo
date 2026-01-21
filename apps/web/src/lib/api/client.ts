@@ -5,7 +5,7 @@
  * error handling, and retry logic.
  */
 
-import { ApiResponse, ApiError, ApiErrorCode } from '@lensio/types';
+import { ApiResponse, ApiError, ApiErrorCode } from '@/types';
 import { authService } from '@/lib/firebase';
 
 // API Configuration

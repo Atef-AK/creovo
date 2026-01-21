@@ -5,7 +5,7 @@
  */
 
 import { create } from 'zustand';
-import { Job, JobStatus } from '@lensio/types';
+import { Job, JobStatus } from '@/types';
 
 interface JobFilters {
     status?: JobStatus;

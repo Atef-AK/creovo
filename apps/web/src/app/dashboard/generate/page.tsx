@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/stores';
 import { nichesApi, jobsApi } from '@/lib/api';
 
-import { Niche } from '@lensio/types';
+import { Niche } from '@/types';
 
 const platforms = [
     { id: 'tiktok', name: 'TikTok', icon: '🎵', color: 'from-pink-500 to-red-500' },

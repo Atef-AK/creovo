@@ -9,7 +9,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { User as FirebaseUser } from 'firebase/auth';
 import { doc, onSnapshot, Unsubscribe } from 'firebase/firestore';
-import { User, UserRole } from '@lensio/types';
+import { User, UserRole } from '@/types';
 import { authService, getFirestoreInstance } from '@/lib/firebase';
 
 interface AuthState {

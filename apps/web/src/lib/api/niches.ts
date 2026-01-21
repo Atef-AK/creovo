@@ -10,7 +10,7 @@ import {
     GetNichesResponse,
     GetNicheResponse,
     PreviewNicheResponse,
-} from '@lensio/types';
+} from '@/types';
 
 export const nichesApi = {
     /**
