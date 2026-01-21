@@ -7,7 +7,7 @@
 
 import { initializeApp, getApps, getApp, FirebaseApp, FirebaseOptions } from 'firebase/app';
 import { getAuth, Auth, connectAuthEmulator } from 'firebase/auth';
-import { getFirestore, Firestore, connectFirestoreEmulator } from 'firebase/firestore';
+import { getFirestore, Firestore, connectFirestoreEmulator, initializeFirestore } from 'firebase/firestore';
 import { getStorage, FirebaseStorage, connectStorageEmulator } from 'firebase/storage';
 import { getFunctions, Functions, connectFunctionsEmulator } from 'firebase/functions';
 import { getAnalytics, Analytics, isSupported } from 'firebase/analytics';
@@ -67,7 +67,7 @@ export function getAuthInstance(): Auth {
 let firestore: Firestore;
 export function getFirestoreInstance(): Firestore {
     if (!firestore) {
-        firestore = getFirestore(app);
+        firestore = initializeFirestore(app, { experimentalForceLongPolling: true });
 
         // Connect to emulator in development
         if (process.env.NODE_ENV === 'development' && process.env.NEXT_PUBLIC_USE_EMULATORS === 'true') {
